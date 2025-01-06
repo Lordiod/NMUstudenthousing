@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>NMU Student Housing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="/">NMU Student Housing</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="/">Home</a></li>
+											<li><a href="/policies">Policies</a></li>
+											<li><a href="/signup">Sign Up</a></li>
+											<li><a href="/login">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<center><img src="{{ url_for('static',filename='images/nmuicon.png') }}" width="150" height="150"></center></br>
+							<h2>NMU Student Housing</h2>
+							<p>Live At NMU<br />
+							Find Your Community.</p>
+							<ul class="actions special">
+								<li><a href="{{ url_for('signup') }}" class="button primary">Apply Now!</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Learn More</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Welcome</h2>
+								<p>New Mansoura University student housing offers housing and real estate services to the University’s students, faculty, and employees. We’re here to help you make NMU home!</p>
+							</header>
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="{{ url_for('static',filename='images/pic01.jpg') }}" alt="" /></div><div class="content">
+								<h2>Prime Location</h2>
+								<p>Our apartments are conveniently close to our Cambridge.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="{{ url_for('static',filename='images/pic02.jpg') }}" alt="" /></div><div class="content">
+								<h2>Utilities included</h2>
+								<p>Rent includes heat, hot and cold water, electricity, gas, and air conditioning.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="{{ url_for('static',filename='images/pic03.jpg') }}" alt="" /></div><div class="content">
+								<h2>Many Services</h2>
+								<p>Lots of services available after you get your Lease!</p>
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Dont miss the chance! </h2>
+								<p>Be a part of the New Mansoura University community</br>
+								Live with people that you really love</p>
+							</header>
+							<ul class="features">
+								<li class="icon fa-handshake">
+									<h3>Interested in Applying?</h3>
+									<p>The first step towards choosing an apartment is to create an application.</p>
+									<a href="{{ url_for('signup') }}" class="button primary">Apply Now!</a></br>
+									<a href="/eligibility"><font size="-1">Review Eligibility Requirements</font></a>
+								</li>
+								<!-- <li class="icon fa-hand-paper">
+									<h3>Find an Apartment</h3>
+									<p>Search for the apartment that suits you well.</p>
+									<a href="/apartments" class="button fit">Search for apartment</a>
+								</li> -->
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Explore our Policies and Services</h2>
+								<p>Learn about pet policies, sublets, roommates, and more.</p>
+							</header>
+							<ul class="actions stacked"></br></br>
+								<li><a href="/policies" class="button fit">Learn More</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/NMU2021" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.nmu.edu.eg/en" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="mailto:info@nmu.edu.eg" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Copyright 2024, NMU Student Housing</li><li>Designer: <a href="https://github.com/Lordiod">Youssef Yasser</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>

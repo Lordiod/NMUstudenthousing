@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Profile</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+        <!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+                <header id="header">
+                    <h1><a href="/">NMU Student Housing</a></h1>
+                    <nav id="nav">
+                        <ul>
+                            <li class="special">
+                                <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                                <div id="menu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/policies">Policies</a></li>
+                                        <li><a href="/apply">Sign Up</a></li>
+                                        <li><a href="/login">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <!-- Main -->
+                    <article id="main">
+                        <section class="wrapper style5">
+                            <div >
+                                <section>
+                                    <div class="table-wrapper">
+                                        <table class="alt">
+                                            <thead>
+                                                {% for name in columnname %}
+                                                <th>{{name}}</th>
+                                                {% endfor %} 
+                                            </thead>
+                                            <tbody>
+                                                {% for row in rows %}
+                                                <form method="post" action="/update">
+                                                <tr>
+                                                    {% for i in range(columnlen) %}
+                                                    {% if i == 0 %}
+                                                    <td><textarea name="{{columnname[i]}}" id="{{columnname[i]}}" disabled>{{row[i]}}</textarea></td>
+                                                    {% else %}
+                                                    <td><textarea name="{{columnname[i]}}" id="{{columnname[i]}}">{{row[i]}}</textarea></td>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                    <td>
+                                                        <ul class="actions">
+                                                            <li>
+                                                                <li><input type="submit" value="Update" class="button" formaction="/update?id={{row[0]}}&columnname={{columnname[0]}}" /></li>
+                                                                <li><input type="submit" value="Delete" class="primary" name="{{row[0]}}" formaction="/delete?id={{row[0]}}&columnname={{columnname[0]}}" /></li>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                </form>
+                                                {% endfor %} 
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="col-6 col-12-medium">
+                                        <form action="/adddata" method="get">
+                                            <ul class="actions">
+                                                {% if columnname[0] != "student_id" and columnname[0] != "req_id" %}
+                                                <li>
+                                                    <input type="submit" value="Add Data" class="primary" name="" />
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </article>
+
+                <!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/NMU2021" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.nmu.edu.eg/en" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="mailto:info@nmu.edu.eg" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Copyright 2024, NMU Student Housing</li><li>Designer: <a href="https://github.com/Lordiod">Youssef Yasser</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='assets/js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='assets/js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+		<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+	</body>
+</html>

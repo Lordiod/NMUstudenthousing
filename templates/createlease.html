@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Lease</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+                <header id="header">
+                    <h1><a href="/">NMU Student Housing</a></h1>
+                    <nav id="nav">
+                        <ul>
+                            <li class="special">
+                                <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                                <div id="menu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/policies">Policies</a></li>
+                                        <li><a href="/apply">Sign Up</a></li>
+                                        <li><a href="/login">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                    
+                <!-- Main -->
+                <article id="main">
+                    <section class="wrapper style5">
+                        <div class="inner">
+                            <section>
+                                <h4>Add data to lease table</h4>
+                                <form method="post" action="#">
+                                    <div class="row gtr-uniform">
+                                        <div class="col-12">
+                                            <select name="start_date" id="start_date">
+                                                <option value="">- start date -</option>
+                                                <option value="2024-10-3">2024-10-3</option>
+                                                <option value="2025-02-3">2025-2-3</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="end_date" id="end_date">
+                                                <option value="">- end date -</option>
+                                                <option value="2025-01-25">2025-01-25</option>
+                                                <option value="2025-06-12">2025-06-12</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="terms_and_conditions" id="terms_and_conditions">
+                                                <option value="accepted">accepted</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" name="price" id="price" value="" placeholder="price" />
+                                        </div>
+                                        <div>
+                                            <select name="student_id" id="student_id">
+                                                <option value="">- student_id -</option>
+                                                {% for id in student_ids %}
+                                                <option value="{{id}}">{{id}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <select name="apt_num" id="apt_num">
+                                                <option value="">- apt_num -</option>
+                                                {% for id in apt_nums %}
+                                                <option value="{{id}}">{{id}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <ul class="actions">
+                                                <li>
+													<li><input type="submit" value="Apply" class="primary" /></li>
+													<li><input type="reset" value="Reset" /></li>   
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/NMU2021" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.nmu.edu.eg/en" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="mailto:info@nmu.edu.eg" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; Copyright 2024, NMU Student Housing</li><li>Designer: <a href="https://github.com/Lordiod">Youssef Yasser</a></li>
+                    </ul>
+                </footer>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/jquery.scrollex.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/jquery.scrolly.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+    </body>
+</html>

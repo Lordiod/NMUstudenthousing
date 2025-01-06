@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Apply for Apartment</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+                <header id="header">
+                    <h1><a href="/">NMU Student Housing</a></h1>
+                    <nav id="nav">
+                        <ul>
+                            <li class="special">
+                                <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                                <div id="menu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/policies">Policies</a></li>
+                                        <li><a href="/signup">Sign Up</a></li>
+                                        <li><a href="/login">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                    
+                <!-- Main -->
+                <article id="main">
+                    <header>
+                        <h2>Apply for Apartment</h2>
+                    </header>
+                    <section class="wrapper style5">
+                        <div class="inner">
+                            <section>
+                                <h4>Start Your Application</h4>
+                                <form method="post" action="/signup">
+                                    <div class="row gtr-uniform">
+                                        <div class="col-6 col-12-xsmall">
+                                            <input type="text" name="firstname" id="firstname" value="" placeholder="First Name" />
+                                        </div>
+                                        <div class="col-6 col-12-xsmall">
+                                            <input type="text" name="secondname" id="secondname" value="" placeholder="Second Name" />
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" name="studentid" id="studentid" value="" placeholder="Student ID" />
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="gender" id="gender">
+                                                <option value="">- Gender -</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6 col-12-xsmall">
+                                            <input type="password" name="password" id="password" value="" placeholder="Password" />
+                                        </div>
+                                        <div class="col-6 col-12-xsmall">
+                                            <input type="password" name="conpassword" id="conpassword" value="" placeholder="Confirm Your Password" />
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="faculty" id="faculty">
+                                                <option value="">- Faculty -</option>
+                                                <option value="business">Business</option>
+                                                <option value="law">Law</option>
+                                                <option value="textile-science-engineering">Textile Science Engineering</option>
+                                                <option value="engineering">Engineering</option>
+                                                <option value="cs">Computer Science & Engineering</option>
+                                                <option value="science">Science</option>
+                                                <option value="medicine">Medicine</option>
+                                                <option value="dentistry">Dentistry</option>
+                                                <option value="pharmacy">Pharmacy</option>
+                                                <option value="human-sciences">Social & Human Sciences</option>
+                                                <option value="mass-media">Mass Media & Communication</option>
+                                                <option value="applied-health-sciences-technology">Applied Health Sciences Technology</option>
+                                                <option value="nursing-sciences">Nursing Sciences</option>
+                                                <option value="graduate-studies">Graduate Studies</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="year" id="year">
+                                                <option value="">- Year Of Study -</option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <ul class="actions">
+                                                <li>
+													<li><input type="submit" value="Apply" class="primary" /></li>
+													<li><input type="reset" value="Reset" /></li>   
+                                                </li>
+                                            </ul>
+                                        </div>
+                                       
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/NMU2021" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.nmu.edu.eg/en" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="mailto:info@nmu.edu.eg" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; Copyright 2024, NMU Student Housing</li><li>Designer: <a href="https://github.com/Lordiod">Youssef Yasser</a></li>
+                    </ul>
+                </footer>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/jquery.scrollex.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/jquery.scrolly.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/browser.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/breakpoints.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+    </body>
+</html>
