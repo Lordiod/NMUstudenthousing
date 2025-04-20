@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from flask_admin import Admin, AdminIndexView, expose
+from flask_admin.menu import MenuLink
 from flask_admin.contrib.sqla import ModelView
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
@@ -96,6 +97,14 @@ class CustomAdminIndexView(AdminIndexView):
         if not current_user.is_admin:
             return redirect(url_for('home'))
         return super().index()
+    def is_visible(self):
+        # This view will not show up in the menu
+        return False
+    
+# Create a new view class for the logout functionality
+class LogoutMenuLink(MenuLink):
+    def get_url(self):
+        return url_for('logout')
     
 class UserAdminView(ModelView):
     column_list = ['id', 'username', 'password', 'is_admin']
@@ -274,6 +283,9 @@ admin.add_view(AdminLeaseView(Lease, db.session))
 admin.add_view(UserAdminView(User, db.session))
 admin.add_view(AdminBuildingView(Building, db.session))
 admin.add_view(MaintenanceRequestAdminView(MaintenanceRequest, db.session))
+
+# Add the logout link to the navbar
+admin.add_link(LogoutMenuLink(name='Logout'))
 
 # Routes
 @app.route('/')
